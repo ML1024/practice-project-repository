@@ -1,4 +1,7 @@
 package com.itheima.service.impl;
 
-public class DeptServiceImpl {
+
+import com.itheima.service.DeptService;
+
+public class DeptServiceImpl implements DeptService {
 }

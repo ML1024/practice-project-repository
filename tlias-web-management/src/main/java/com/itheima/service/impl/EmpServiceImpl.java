@@ -1,4 +1,6 @@
 package com.itheima.service.impl;
 
-public class EmpServiceImpl {
+import com.itheima.service.EmpService;
+
+public class EmpServiceImpl implements EmpService {
 }
