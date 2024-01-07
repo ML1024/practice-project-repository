@@ -12,12 +12,11 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-
 //@RestController = @ResponseBody + @Controller
-
 
 @Slf4j
 @RestController
+@RequestMapping("/depts")
 public class DeptController {
     //固定代码引入日志（可以用注解 @Slf4j 代替）
     //private static Logger log = LoggerFactory.getLogger(DeptController.class);
@@ -25,20 +24,26 @@ public class DeptController {
     @Autowired
     private DeptService deptService;
 
-    @GetMapping("/depts")
+    @GetMapping
     public Result getDeptList(){
         log.info("查询全部的部门数据");
-
         //调用service查询部门数据
         List<Dept> deptList = deptService.getDeptList();
         return Result.success(deptList);
     }
 
-    @DeleteMapping("/depts/{id}")
+    @DeleteMapping("/{id}")
     public Result deleteDept(@PathVariable Integer id){
         log.info("根据id删除部门：{}", id);
-
         deptService.deleteDept(id);
+        return Result.success();
+    }
+
+    @PostMapping
+    public Result addDept(@RequestBody Dept dept){
+        log.info("新增部门");
+        //调用service新增部门
+        deptService.addDept(dept);
         return Result.success();
     }
 

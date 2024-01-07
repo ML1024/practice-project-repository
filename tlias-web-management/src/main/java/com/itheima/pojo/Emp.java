@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Data
 @NoArgsConstructor
@@ -17,8 +17,8 @@ public class Emp {
     private Short gender;
     private String image;
     private Short job;
-    private Date entrydate;
+    private LocalDateTime entrydate;
     private Integer deptId;
-    private Date createTime;
-    private Date updateTime;
+    private LocalDateTime createTime;
+    private LocalDateTime updateTime;
 }
