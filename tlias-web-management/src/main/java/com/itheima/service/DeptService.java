@@ -7,5 +7,18 @@ import java.util.List;
 
 public interface DeptService{
 
+    /*
+    * 查询全部部门数据
+    * */
     List<Dept> getDeptList();
+
+    /*
+    * 删除部门
+    * */
+    void deleteDept(Integer id);
+
+    /*
+     * 新增部门
+     * */
+    void addDept(Dept dept);
 }
