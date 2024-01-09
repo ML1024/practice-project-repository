@@ -9,7 +9,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class TliasWebManagementApplication {
 
 	public static void main(String[] args) {
-		log.info("查询全部的部门数据");
 		SpringApplication.run(TliasWebManagementApplication.class, args);
 	}
 
