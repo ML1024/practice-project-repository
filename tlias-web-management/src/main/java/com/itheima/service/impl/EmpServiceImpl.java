@@ -17,6 +17,7 @@ public class EmpServiceImpl implements EmpService {
 
     @Autowired
     private EmpMapper empMapper;
+    private Emp emp;
 
     @Override
     public PageBean getPage(Integer page, Integer pageSize, String name, Short gender,
@@ -42,5 +43,13 @@ public class EmpServiceImpl implements EmpService {
         emp.setCreateTime(LocalDateTime.now());
         emp.setUpdateTime(LocalDateTime.now());
         empMapper.insertEmp(emp);
+    }
+
+    @Override
+    public Emp login(Emp emp) {
+        this.emp = emp;
+        //login是业务方法，不建议使用这个名字
+        //操作数据库的方法可以叫 getByUsernameAndPassword
+        return empMapper.getByUsernameAndPassword(emp);
     }
 }
