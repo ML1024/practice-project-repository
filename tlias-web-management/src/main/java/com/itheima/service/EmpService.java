@@ -27,4 +27,11 @@ public interface EmpService {
      * @param emp
      */
     void addEmp(Emp emp);
+
+    /**
+     * 员工登录
+     * @param emp
+     * @return
+     */
+    Emp login(Emp emp);
 }
